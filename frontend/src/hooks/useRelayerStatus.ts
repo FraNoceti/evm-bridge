@@ -37,7 +37,9 @@ export function useRelayerStatus({ txHash, enabled, pollingInterval = 2000 }: Us
 
     const fetchStatus = async () => {
       try {
-        const res = await fetch(`${RELAYER_URL}/status/${txHash}`);
+        const res = await fetch(`${RELAYER_URL}/status/${txHash}?t=${Date.now()}`, {
+          cache: 'no-store',
+        });
         const data: RelayerStatusResponse = await res.json();
 
         // Store response WITH the txHash it belongs to
