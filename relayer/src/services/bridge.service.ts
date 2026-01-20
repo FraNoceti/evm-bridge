@@ -80,8 +80,13 @@ async function handleEthLocked(log: any): Promise<void> {
     }
   } catch (error: any) {
     console.error(`  ERROR: ${error.message}`);
-    // Add to retry queue instead of marking as failed immediately
-    retryService.addFailedMint(sourceTxHash, recipient, amount, nonce, error.message);
+    // AlreadyProcessed (0x57eee766) means mint succeeded previously - mark complete
+    if (error.message?.includes("0x57eee766")) {
+      console.log(`  Mint already processed - marking as complete`);
+      statusService.setComplete(sourceTxHash, "already-processed");
+    } else {
+      retryService.addFailedMint(sourceTxHash, recipient, amount, nonce, error.message);
+    }
   }
 }
 
@@ -128,8 +133,13 @@ async function handleTokensBurned(log: any): Promise<void> {
     }
   } catch (error: any) {
     console.error(`  ERROR: ${error.message}`);
-    // Add to retry queue instead of marking as failed immediately
-    retryService.addFailedUnlock(sourceTxHash, recipient, amount, nonce, error.message);
+    // AlreadyProcessed (0x57eee766) means unlock succeeded previously - mark complete
+    if (error.message?.includes("0x57eee766")) {
+      console.log(`  Unlock already processed - marking as complete`);
+      statusService.setComplete(sourceTxHash, "already-processed");
+    } else {
+      retryService.addFailedUnlock(sourceTxHash, recipient, amount, nonce, error.message);
+    }
   }
 }
 
