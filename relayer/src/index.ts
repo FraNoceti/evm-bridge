@@ -23,7 +23,7 @@ async function main(): Promise<void> {
 
   await startEventWatchers();
 
-  app.listen(config.port, () => {
+  app.listen(config.port, "0.0.0.0", () => {
     console.log(`HTTP server running on port ${config.port}\n`);
   });
 }
