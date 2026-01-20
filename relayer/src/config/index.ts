@@ -8,7 +8,7 @@ export const config = {
     "0x05b315e576cbd50a5d3f4313a00ba31be20e495d") as `0x${string}`,
   bridgeDestination: (process.env.BRIDGE_DESTINATION_ADDRESS ||
     "0xe0af9d805d6cd555bd1e24627e6358ff45be9986") as `0x${string}`,
-  port: parseInt(process.env.RELAYER_PORT || "3001"),
+  port: parseInt(process.env.PORT || process.env.RELAYER_PORT || "3001"),
 };
 
 export function validateConfig(): void {

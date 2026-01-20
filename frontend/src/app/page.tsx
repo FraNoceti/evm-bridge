@@ -1,5 +1,6 @@
 import { ConnectWallet } from "@/components/connect-wallet";
 import { Bridge } from "@/components/bridge";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -7,21 +8,21 @@ export default function Home() {
       <header className="border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <a href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
                 <svg className="w-5 h-5 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                 </svg>
               </div>
               <span className="font-semibold text-lg">EVM Bridge</span>
-            </a>
+            </Link>
             <nav className="hidden sm:flex items-center gap-4">
-              <a href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 Bridge
-              </a>
-              <a href="/docs" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link href="/docs" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Documentation
-              </a>
+              </Link>
             </nav>
           </div>
           <ConnectWallet />
