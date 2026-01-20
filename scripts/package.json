@@ -1,0 +1,17 @@
+{
+  "name": "evm-bridge-scripts",
+  "type": "module",
+  "scripts": {
+    "deploy": "npx tsx deploy.ts",
+    "relayer": "npx tsx relayer.ts",
+    "lock": "npx tsx lock-eth.ts"
+  },
+  "dependencies": {
+    "viem": "^2.21.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

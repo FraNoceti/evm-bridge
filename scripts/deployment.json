@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-01-20T02:26:56.010Z",
+  "admin": "0xE90b19C632F02946238A0094cB7b0A12BAc62119",
+  "relayer": "0x6bc7e2318a514894C97A3Eb633c0A4a59600484B",
+  "sepolia": {
+    "chainId": 11155111,
+    "bridgeSource": "0x05b315e576cbd50a5d3f4313a00ba31be20e495d",
+    "explorerUrl": "https://sepolia.etherscan.io/address/0x05b315e576cbd50a5d3f4313a00ba31be20e495d"
+  },
+  "baseSepolia": {
+    "chainId": 84532,
+    "bridgeDestination": "0xe0af9d805d6cd555bd1e24627e6358ff45be9986",
+    "wrappedToken": "0xd70ca8b2bb138ced7cc886d123dfb6ac559d2ab0",
+    "explorerUrls": {
+      "bridge": "https://sepolia.basescan.org/address/0xe0af9d805d6cd555bd1e24627e6358ff45be9986",
+      "token": "https://sepolia.basescan.org/address/0xd70ca8b2bb138ced7cc886d123dfb6ac559d2ab0"
+    }
+  }
+}
